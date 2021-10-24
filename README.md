@@ -6,4 +6,4 @@ Communicated with Telegram bot.
 # Tools
 - `MongoDB`/`mongoose` - for working with databases;
 - `telegraf` - is a library for develop Telegram Bots; 
-- `express` - backend web framework based on middleware.
+- `express` - backend web framework based on middlewares.
