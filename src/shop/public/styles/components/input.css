@@ -1,0 +1,18 @@
+.input-data {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    transition: all .3s;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: "SF Pro Display", sans-serif;
+    -webkit-appearance: none;
+}
+
+.input-data:focus {
+    background: #f3f3f3;
+}
+
+.input-data.invalid {
+    background: #ff9a9a;
+}

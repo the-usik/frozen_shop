@@ -1,0 +1,84 @@
+{
+  "sessions": [
+    {
+      "id": "858973278:858973278",
+      "data": {
+        "__scenes": {},
+        "auth": true,
+        "database": {
+          "categories": [
+            {
+              "_id": "603e81f15dca8303fc1e6741",
+              "name_ru": "Рюкзак",
+              "name_en": "Backpack"
+            },
+            {
+              "_id": "603e81f15dca8303fc1e6742",
+              "name_ru": "Бомбер",
+              "name_en": "Bomber"
+            },
+            {
+              "_id": "603e81f15dca8303fc1e6743",
+              "name_ru": "Толстовка с капюшоном",
+              "name_en": "Hoodie"
+            },
+            {
+              "_id": "603e81f15dca8303fc1e6744",
+              "name_ru": "Лонгслив",
+              "name_en": "Long sleave"
+            },
+            {
+              "_id": "603e81f15dca8303fc1e6745",
+              "name_ru": "Шорты",
+              "name_en": "Shorts"
+            },
+            {
+              "_id": "603e81f15dca8303fc1e6746",
+              "name_ru": "Толстовка",
+              "name_en": "Sweatshirt"
+            },
+            {
+              "_id": "603e81f15dca8303fc1e6747",
+              "name_ru": "Спортивный костюм",
+              "name_en": "Tracksuit"
+            },
+            {
+              "_id": "603e81f15dca8303fc1e6748",
+              "name_ru": "Ветровка",
+              "name_en": "Windbreaker"
+            }
+          ],
+          "sizes": [
+            {
+              "_id": "603285b78194fb5911a6d9ce",
+              "name": "XS"
+            },
+            {
+              "_id": "6032860a8194fb5911a6d9cf",
+              "name": "S"
+            },
+            {
+              "_id": "603286168194fb5911a6d9d0",
+              "name": "M"
+            },
+            {
+              "_id": "6032861e8194fb5911a6d9d1",
+              "name": "L"
+            },
+            {
+              "_id": "603286278194fb5911a6d9d2",
+              "name": "XL"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "832618958:832618958",
+      "data": {
+        "__scenes": {},
+        "auth": true
+      }
+    }
+  ]
+}

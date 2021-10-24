@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("./templates/head") %>
+    <link rel="stylesheet" href="/styles/product.css" />
+    <script>
+      window.cur = {
+        product: <%- JSON.stringify(product) %>
+      };
+    </script>
+</head>
+
+<body>
+  <!-- <% const category=product.category?.name_ru || "не указана" %> -->
+  <!-- <% const description=product.description %> -->
+  <%- include("./templates/popups") %>
+    <div class="wrapper blur">
+      <%- include("./templates/header")%>
+
+        <div class="content">
+          <div class="product-wrapper">
+            <div class="product-info">
+              <div class="product-left-info">
+                <div class="product-images">
+                  <% for (let { filename } of product.images) {%>
+                    <div class="image-wrapper">
+                      <img src="/photos/<%=filename%>" alt="" />
+                    </div>
+                    <% } %>
+                </div>
+              </div>
+
+              <div class="product-right-info">
+                <div class="product-header">
+                  <span class="product-title">
+                    <%=product.name%>
+                  </span>
+                  <% if (product.for_sale) {%>
+                    <span id="discount">
+                      <%=product.discount + "%" %>
+                    </span>
+                    <% } %>
+
+                      <div class="product-price">
+                        <p>
+                          <!-- <span>Цена:</span> -->
+                          <span class="product-price-text">
+                            <%=helpers.formatPrice(product.for_sale ? product.price -
+                              helpers.calculatePercent(product.price, product.discount) : product.price)%>
+                          </span>
+
+                          <% if (product.for_sale) {%>
+                            <span class="product-old-price">
+                              <%=helpers.formatPrice(product.price)%>
+                            </span>
+                            <% }%>
+
+                        </p>
+                      </div>
+                </div>
+                <div class="product-color">
+                  <p>
+                    <span>Цвет: </span>
+                    <span>
+                      <%=product.color%>
+                    </span>
+                  </p>
+                </div>
+                <% if (childs.length> 0) {%>
+                  <div class="product-childrens">
+                    <% for(let child of childs) { %>
+                      <% if (child.color==product.color || child.images.length < 1) continue;%>
+                        <div class="product-child">
+                          <div class="child-block">
+                            <div class="image-wrapper">
+                              <img src="/photos/<%=child.images[0].filename%>" alt="<%=child.color%>" />
+                            </div>
+                          </div>
+                        </div>
+                        <%}%>
+                  </div>
+                  <%}%>
+                    <div class="product-sizes">
+                      <% for (let { _id, size, count } of product.sizes) {%>
+                        <div class="size-block" data-product-sizeId="<%=_id%>">
+                          <%=size%>
+                        </div>
+                        <%}%>
+                    </div>
+                    <div class="product-counter-box">
+                      <p>Количество: <span id="counter-dec">-</span><span id="counter">0</span><span
+                          id="counter-inc">+</span></p>
+                    </div>
+                    <div class="product-total">
+                      <p>Кол-во товаров в наличии: <span id="product-total-count">0</span>шт.</p>
+                      <p>Итоговая цена: <span id="product-total-price"></span>₽</p>
+                    </div>
+                    <div class="product-buttons">
+                      <input id="add-to-cart" type="submit" class="button" value="Добавить в корзину" />
+                    </div>
+              </div>
+            </div>
+
+            <div class="product-footer">
+              <h2>Дополнительная информация</h2>
+              <div class="product-description">
+                <p><span class="description-item">Категория:</span> <span>
+                    <%=category%>
+                  </span></p>
+                <p><span class="description-item">Описание:</span> <span>
+                    <%=description%>
+                  </span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <%- include("./templates/scripts") %>
+      <script src="/scripts/pages/product.js"></script>
+</body>
+
+</html>

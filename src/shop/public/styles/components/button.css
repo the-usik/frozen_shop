@@ -1,0 +1,16 @@
+.button {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  background: var(--secoundBackgroundColor);
+  transition: all 0.2s;
+  font-family: "SF Pro Display", sans-serif;
+  -webkit-appearance: none;
+}
+
+.button:hover {
+  background: rgb(114, 157, 209);
+}

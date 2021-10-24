@@ -1,0 +1,53 @@
+.notifications {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999;
+    overflow: hidden;
+}
+
+.notifications #close {
+    float: right;
+    cursor: pointer;
+}
+
+.notifications #close:hover {
+    opacity: .4;
+}
+
+@keyframes ShowingAnimation {
+    from {
+        transform: translateY(200%);
+    }
+}
+
+.notifications>.notify {
+    animation: ShowingAnimation .5s;
+    animation-timing-function: cubic-bezier(1, 0, .5, 1);
+    backdrop-filter: blur(2px);
+    background: #222;
+    color: #fff;
+    margin: 10px;
+    padding: 10px;
+    max-width: 400px;
+    min-width: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+    border-top: 4px solid rgb(83, 247, 118);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+}
+.notify > .notify-content {
+    word-break: normal;
+}
+
+.notify .notify-content::before {
+    content: "😃"
+}
+.notify.error {
+    border-top: 4px solid rgb(255, 61, 61);
+}
+
+.notify.error .notify-content::before {
+    content: "😨"
+}

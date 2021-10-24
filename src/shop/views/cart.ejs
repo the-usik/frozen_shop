@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./templates/head") %>
+    <link rel="stylesheet" href="/styles/cart.css" />
+  </head>
+
+  <body>
+    <%- include("./templates/popups") %>
+
+    <div class="wrapper blur">
+      <%- include("./templates/header")%>
+
+      <div class="content">
+        <div class="cart-container">
+          <!-- Products -->
+
+          <div class="products-part">
+            <div class="part-title">Товары</div>
+            <div class="cart-product-list"></div>
+          </div>
+
+          <!-- End of products -->
+          <!-- Order wrapper -->
+
+          <div class="order-wrapper">
+            <div class="part-title">Оформление заказа</div>
+
+            <div class="order-parts">
+              <div class="form-block">
+                <h3>Данные получателя</h3>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <p>Email:</p>
+                    <input type="text" name="email" required placeholder="Введите email" />
+                  </div>
+                  <div class="form-field">
+                    <p>Получатель:</p>
+
+                    <input
+                      type="text"
+                      required
+                      name="full_name"
+                      placeholder="Введите ФИО получателя"
+                    />
+                  </div>
+
+                  <div class="form-field">
+                    <p>Телефон:</p>
+
+                    <input
+                      type="tel"
+                      name="phone_number"
+                      required
+                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                      placeholder="Введите телефон"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-block">
+                <h2>Адрес доставки</h2>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <p>Индекс</p>
+                    <input
+                      type="number"
+                      name="order_index"
+                      placeholder="473960"
+                      maxlength="6"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <p>Область</p>
+
+                    <select name="subject" id="subject"></select>
+                  </div>
+                  <div class="form-field">
+                    <p>Город</p>
+                    <select name="city" id="city"></select>
+                  </div>
+                  <div class="form-field">
+                    <p>Адрес</p>
+                    <div class="input-row">
+                      <input name="street" type="text" placeholder="Улица" required />
+                      <input name="home" type="text" placeholder="Дом" required />
+                      <input name="flat" type="text" placeholder="Квартира" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-buttons">
+              <input
+                type="submit"
+                id="pay-button"
+                value="Оплатить"
+                class="button"
+              />
+            </div>
+          </div>
+
+          <!-- End of order -->
+        </div>
+      </div>
+    </div>
+
+    <%- include("./templates/scripts")%>
+    <script src="/scripts/pages/cart.js"></script>
+  </body>
+</html>

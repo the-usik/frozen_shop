@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		/>
+		<link rel="stylesheet" href="/styles/payment.css" />
+		<title>Платежная система</title>
+	</head>
+
+	<body>
+		<div class="notifications"></div>
+		<div class="container">
+			<div class="header">
+				<div class="status-icon">
+					<div class="image-wrapper">
+						<img src="/icons/payment.svg" />
+					</div>
+				</div>
+			</div>
+
+			<div class="content">
+				<p class="title">Оплата</p>
+
+				<div class="wrapper">
+					<div class="notification"></div>
+					<div class="form-block">
+						<div class="form-group">
+							<label for="">Владелец карты</label>
+							<input
+								type="text"
+								value="<%= order.delivery.full_name%>"
+								name="card_holder"
+								class="input-data"
+								placeholder="IVAN IVANOV"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="">Номер карты</label>
+							<input
+								type="text"
+								name="card_number"
+								class="input-data"
+								placeholder="0000 0000 0000 0000"
+							/>
+						</div>
+						<div class="form-group flex-wrapper">
+							<div class="group-column">
+								<div class="form-group">
+									<label for="">Срок действия</label>
+									<input
+										type="text"
+										name="card_expire_month"
+										class="input-data"
+										placeholder="01"
+									/>
+								</div>
+							</div>
+							<div class="group-column">
+								<div class="form-group">
+									<input
+										type="text"
+										name="card_expire_year"
+										class="input-data"
+										placeholder="2020"
+									/>
+								</div>
+							</div>
+							<div class="group-column">
+								<div class="form-group">
+									<label for="">CVC</label>
+									<input
+										type="password"
+										name="card_code"
+										class="input-data"
+										maxlength="3"
+										placeholder="000"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="info-wrapper">
+						<div class="payment-info">
+							<p>
+								Итого к оплате:
+								<span id="amount"><%=order.price.toLocaleString("ru")%></span>
+								руб.
+							</p>
+						</div>
+						<div class="line"></div>
+						<div class="secure-info">
+							<p>
+								<i class="fas fa-lock"></i>
+								<span>Ваши данные надежно защищены</span>
+							</p>
+						</div>
+					</div>
+					<input type="submit" class="button" value="Оплатить" />
+				</div>
+			</div>
+		</div>
+		<script src="/scripts/utils.js"></script>
+		<script src="/scripts/notification.js"></script>
+		<script src="/scripts/request.js"></script>
+		<script src="/scripts/payment.js"></script>
+	</body>
+</html>
